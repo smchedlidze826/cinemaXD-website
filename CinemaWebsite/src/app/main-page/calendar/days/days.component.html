@@ -1,0 +1,8 @@
+<div class="dates">
+    <div class="date" *ngFor="let date of week; let i = index" value="i" (click)="selectedDate = i"
+        [ngClass]="selectedDate == i ? 'selected-date': 'none'">
+        <span class="weekDay">{{date | date:'EEE' }} </span>
+        <span class="dayNum">{{date | date:'d'}}</span>
+        <span class="month">{{date | date:'MMM' }}</span>
+    </div>
+</div>

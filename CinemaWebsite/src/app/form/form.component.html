@@ -1,0 +1,64 @@
+<form class="container col-10 m-5" (ngSubmit)="onSubmit(f.value)" #f=ngForm>
+    <div class="form-group">
+        <label for="">Title</label>
+        <input ngModel class="form-control" name="title" required>
+    </div>
+    <div class="form-group">
+        <label for="">director</label>
+        <input ngModel class="form-control" name="director" required>
+    </div>
+    <div class="form-group">
+        <label for="">img</label>
+        <input ngModel class="form-control" name="imgUrl" required>
+    </div>
+    <div class="form-group">
+        <label for="">duration</label>
+        <input ngModel class="form-control" name="duration" required>
+    </div>
+    <div class="form-group">
+        <label for="">rating</label>
+        <input ngModel class="form-control" name="imdbRating" required>
+    </div>
+    <div class="form-group">
+        <label for="">ImdbURl</label>
+        <input ngModel class="form-control" name="imdbUrl" required>
+    </div>
+    <div class="form-group">
+        <label for="">trailerUrl</label>
+        <input ngModel class="form-control" name="trailerUrl" required>
+    </div>
+    <div class="form-group">
+        <label for="">Description</label>
+        <input ngModel class="form-control" name="description" required>
+    </div>
+    <div class="d-flex justify-content-between">
+        <div class="form-group ">
+            <label for="">Morning</label>
+            <input ngModel class="form-control" name="morning" required>
+        </div>
+        <div class="form-group">
+            <label for="">Evening</label>
+            <input ngModel class="form-control" name="evening" required>
+        </div>
+        <div class="form-group">
+            <label for="">night</label>
+            <input ngModel class="form-control" name="night" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="">Adult</label>
+        <select name="onlyAdult" class="form-control" [ngModel]='true'>
+            <option value="true">18+</option>
+            <option value="false">18-</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="">State</label>
+        <select name="state" class="form-control" [ngModel]='1'>
+            <option value="0">Comming Soon</option>
+            <option value="1">Already in Cinema</option>
+        </select>
+    </div>
+
+    <button class="btn btn-success form-control">Submit</button>
+</form>

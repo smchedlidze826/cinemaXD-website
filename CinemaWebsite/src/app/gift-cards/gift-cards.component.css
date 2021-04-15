@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400&display=swap');
+
+*{
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 300;
+    letter-spacing: .8px;
+    color:white;
+}
+
+.gift-card-container{
+    display: flex;
+}
+
+
+h3{
+    font-size: 40px;
+    color: rgb(230, 72, 58);
+    margin: 10px 0;
+    text-align: center;
+    margin: 50px 0;
+}
+.side-comments{
+    border-left: 1px solid rgb(230, 72, 58);
+    margin-top: 50px;
+}
+.gift-cards{
+    display: flex;
+    flex-wrap: wrap;
+}
+.gift-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    margin: 20px auto;
+}
+.img-container{
+    max-height: 250px;
+    display: flex;
+    justify-content: center;
+}
+img{
+    height: 100%;
+    object-fit: cover;
+    transition: all .6s ease;
+    cursor: pointer;
+    overflow:hidden;
+}
+.img-container:hover img{
+    opacity: .5;
+}
+small,p{
+    font-size: 16px;
+    font-weight: 200;
+    margin: 5px auto;
+    letter-spacing: 1px;
+}
+p.price{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px auto;
+}

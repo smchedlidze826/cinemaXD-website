@@ -1,0 +1,23 @@
+<div class="comment-container" *ngIf="commentsLoaded">
+    <h2 class="p-2">Film Ratings:</h2>
+    <div *ngFor="let comment of commentsArr">
+        <div class="comment-card mb-3" *ngIf="comment.movieTitle === selectedMovie.title">
+            <div class="left">
+                <img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png">
+            </div>
+            <div class="right ">
+                <h3 class="mb-1">{{comment.name}}</h3>
+                <p class=" title mb-1">{{comment.movieTitle}}</p>
+                <div class="rating mb-2">
+                    <ngb-rating [(rate)]="comment.rating">
+                        <ng-template let-fill="fill" let-index="index">
+                            <span class="star filled" [class.filled]="fill === 100">&#9733;</span>
+                        </ng-template>
+                    </ngb-rating>
+                </div>
+                <p>{{comment.text}}</p>
+            </div>
+        </div>
+    </div>
+
+</div>

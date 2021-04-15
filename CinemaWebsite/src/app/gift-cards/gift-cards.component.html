@@ -1,0 +1,21 @@
+<div class="gift-card-container">
+    <div class="gift col-8">
+        <h3>GIFT CARDS</h3>
+        <p>We recommend ECWID as a third party store application. It embeds beautifully with Your Cinema - see below. It
+            integrates with Paypal and other payment platforms. Note: the below example won't let you purchase things.
+            For another example, see our Candy Bar shop.</p>
+        <hr class="bg-light">
+        <div class="gift-cards">
+            <div class="gift-card" *ngFor="let card of giftCardsArr">
+                <div class="img-container">
+                    <img [src]="card.img" alt="">
+                </div>
+                <small>{{card.price}} Gift card</small>
+                <p class="price">{{card.price}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="side-comments col-4">
+        <app-side-comment></app-side-comment>
+    </div>
+</div>

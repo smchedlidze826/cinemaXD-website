@@ -1,0 +1,33 @@
+.dates{
+    display: flex;
+}
+.date{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: calc(100%/7);
+    padding: 5px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+.weekDay,.month{
+    font-size: 17px;
+}
+.dayNum{
+    font-size: 14px;
+}
+.selected-date{
+    position: relative;
+}
+.selected-date::before{
+    content: '';
+    position: absolute;
+    z-index: 2;
+    width: 20px;
+    border: 15px solid transparent;
+    border-top: 15px solid #E73E2E;
+    bottom: 0;
+    transform: translateY(30px);
+}

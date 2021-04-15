@@ -1,0 +1,45 @@
+nav{
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    background-color: #E6483A;
+    color: white;
+    box-shadow: 0 0 10px black;
+
+}
+.navbar{
+    margin: auto;
+    width: 80%;
+    max-width: 1364px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+.logo a{
+    font-size: 30px;
+}
+ul {
+    list-style: none;
+    display: flex;
+}
+ul li{
+    padding-left: 20px;
+}
+ul li a{
+    font-size: 17px;
+    cursor: pointer;
+    color: white;
+}
+ul li a:hover{
+    color: #e0e0e0;
+}
+.active-link{
+    color: #e0e0e0;
+    text-decoration: none;
+}
+
+
+@media screen and (max-width: 800px) {
+ 
+  }

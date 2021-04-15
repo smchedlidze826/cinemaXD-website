@@ -1,0 +1,38 @@
+.star {
+    font-size: 1.5rem;
+    color: #c2b57b;
+  }
+.filled {
+    color: #ee9f0d;
+  }
+
+.form-container{
+    padding-bottom: 35px;
+}
+button{
+    float: right;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 1.3px;
+}
+
+input{
+    outline: none;
+    border: none;
+}
+input.ng-touched.ng-invalid, textarea.ng-touched.ng-invalid{
+    box-shadow: 0 0 15px red;
+}
+
+.success-msg{
+    background: rgb(22, 134, 40);
+    color:white;
+    font-size: 25px;
+    text-align: center;
+    padding: 7px 0;
+    opacity: 0;
+}
+.show{
+    opacity: 1;
+}

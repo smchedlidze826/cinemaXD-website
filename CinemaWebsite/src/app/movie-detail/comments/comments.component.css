@@ -1,0 +1,50 @@
+.star {
+    font-size: 1.5rem;
+    color: #c2b57b;
+}
+.filled {
+    color: #ee9f0d;
+}
+.comment-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+h2{
+    color: white;
+    background:black;
+    position: sticky;
+    top: 0;
+    text-align: center;
+    box-shadow: 0 0 5px black;
+}
+.space{
+    height: 110px;
+}
+.comment-card{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding: 5px 10px 0;
+    border-top: 1px solid white;
+}
+.left{
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right{
+    width: 92%;
+    padding:0 2px;
+}
+.comment-card .left img{
+    max-width: 100px;
+    max-height: 100px;
+    height: 40%;
+}
+.title{
+    background: rgb(230, 72, 58);
+    padding-left: 10px;
+}

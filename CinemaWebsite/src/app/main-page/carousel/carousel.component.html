@@ -1,0 +1,58 @@
+<div class="container spinner-container" *ngIf="!dataLoaded">
+    <mat-spinner></mat-spinner>
+</div>
+<div class="container" *ngIf="dataLoaded">
+    <div class="bg">
+        <img *ngIf="!playWasClicked || currentlySelectedMovie.trailerUrl == '0' "
+            src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            [ngStyle]="{zIndex:!playWasClicked ? 0:'-1'}">
+
+        <img *ngIf="!playWasClicked" [src]="currentlySelectedMovie.imgUrl"
+            [ngStyle]="{zIndex:!playWasClicked ? 0:'-1'}">
+
+        <video *ngIf="playWasClicked && currentlySelectedMovie.trailerUrl !=''"
+            [ngStyle]="{zIndex:playWasClicked ? 10:'-1'}" #p autoplay>
+            <source [src]="currentlySelectedMovie.trailerUrl" type="video/mp4">
+            <source [src]="currentlySelectedMovie.trailerUrl" type="video/ogg">
+        </video>
+        <div class="spinner-video" *ngIf="playWasClicked">
+            <mat-spinner></mat-spinner>
+        </div>
+        <div class="play-pause-btn"
+            [ngStyle]="{'z-index':playWasClicked && currentlySelectedMovie.trailerUrl != '0' ? 11:'-1'}">
+
+            <svg *ngIf="!playing" class="play-pause" (click)="onClickPause()">
+                <rect x="0" width='5' height='30' class="fill" fill='rgba(0, 0, 0, .5)' />
+                <rect x="13" width='5' height='30' class="fill" fill='rgba(0, 0, 0, .5)' />
+            </svg>
+
+            <svg *ngIf="playing" class="play-pause" (click)="onClickPause()">
+                <polygon points="0,0 0,26 20,13 " class="fill" fill='rgba(0, 0, 0, .5)' />
+            </svg>
+        </div>
+    </div>
+    <div class="container-layer">
+        <div class="movie-data" *ngIf="!playWasClicked">
+            <div class="movie-data-bg">
+                <div class="content">
+                    <div class="data">
+                        <h4>{{currentlySelectedMovie.title | uppercase}}</h4>
+                        <small>{{currentlySelectedMovie.duration }} min</small>
+                        <p>{{currentlySelectedMovie.description | shorten:250}}</p>
+                        <hr class="bg-light">
+                    </div>
+                    <div class=" play-icon">
+                        <button type="button" (click)="playWasClicked = !playWasClicked">
+                            <span>
+                                Play
+                            </span>
+                            <span class="material-icons" style="font-size: 20px;">
+                                play_circle_outline
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

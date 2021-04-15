@@ -1,0 +1,126 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+}
+.card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+    width: auto;
+    background: none;
+    border: none;
+    color:white;
+}
+img{
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.data{
+    padding: 15px;
+    width: 60%;
+}
+
+h3{
+    margin: 0;
+}
+span{
+    margin-left: 10px;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+.wish-list{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.ticket-btns{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+}
+button{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin-top: 15px;
+    display: block;
+    border: 1px solid salmon;
+    color:white;
+    height: 45px;
+    min-width: 100px;
+    padding: 0 25px;
+    position: relative;
+    z-index: 2;
+    background: none;
+    font-size: 16px;
+
+}
+.added-to-wish-list{
+    color: red;
+}
+button:hover{
+    color: transparent;
+}
+button:after { 
+    content: "Buy Now";
+    color: transparent;
+    height: 0; 
+    width: 100%;
+    left: 0; 
+    top: 0; 
+    position: absolute; 
+    transition: all .5s ease 0s; 
+    -webkit-transition: all .5s ease 0s; 
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imdb-template{
+    display: none;
+    background: #F5C518;
+    color: #000000;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 7px;
+    letter-spacing: 1px;
+    font-size: 17px;
+}
+button:hover::after{
+    z-index: 3;
+    color: white;
+    height: 100%;
+    background: salmon;
+}
+
+@media screen and (max-width: 1050px) {
+    button{
+        min-width: 60px;
+        padding: 0 5px;
+    }
+    /* .wish-list-text{
+        display: none;
+    } */
+    .imdb-template{
+        display: inline-block;
+    }
+    .imdb{
+        display: none;
+    }
+  }
+
+  @media screen and (max-width: 762px) {
+    .container{
+        padding: 0;
+    }
+    .wish-list-text{
+        display: none;
+    }
+  }

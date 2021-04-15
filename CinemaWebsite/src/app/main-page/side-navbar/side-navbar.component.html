@@ -1,0 +1,7 @@
+<div class="container">
+    <ul>
+        <li *ngFor="let movie of dataArr; let i = index" (click)="onClick(i)">
+            {{movie.title | uppercase}}
+        </li>
+    </ul>
+</div>

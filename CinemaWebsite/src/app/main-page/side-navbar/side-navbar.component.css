@@ -1,0 +1,28 @@
+.container
+{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(230, 72, 58);
+}
+ul{
+    padding: 0;
+    color: white;
+}
+ul li{
+    padding-bottom: 9px;
+    list-style: none;
+    font-size: 17px;
+    cursor: pointer;
+}
+li:hover{
+    text-decoration: underline;
+}
+
+
+@media screen and (max-width: 950px) {
+    ul li{
+        font-size: 15px;
+    }
+  }

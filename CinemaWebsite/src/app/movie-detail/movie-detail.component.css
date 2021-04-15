@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400&display=swap');
+
+*{
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 300;
+    letter-spacing: .8px;
+}
+.spinner-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+.spinner-container ::ng-deep .mat-progress-spinner circle, .mat-spinner circle{
+    stroke: #E6483A;
+}
+.container{
+    background: rgb(49, 49, 49);
+    color: white;
+    margin: 50px auto 0;
+}
+.data-container{
+    display: flex;
+}
+
+img{
+    max-width: 500px;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.right{
+    padding: 35px;
+}
+h2{
+    font-weight: 400;
+    font-size: 40px;
+}
+p,hr{
+    max-width: 600px;
+    margin:20px 0;
+}
+video{
+    margin: 20px;
+    margin-left: 0;
+    max-width: 600px;
+    max-height: 600px;
+}
+.video-missing-img{
+    display: block;
+    margin: 0;
+    margin-top: 20px;
+    width: 100%;
+    object-fit: cover;
+}

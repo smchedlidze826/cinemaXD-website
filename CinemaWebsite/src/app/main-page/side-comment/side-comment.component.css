@@ -1,0 +1,31 @@
+.star {
+    font-size: 1.5rem;
+    color: #c2b57b;
+}
+.filled {
+    color: #ee9f0d;
+}
+h2{
+    color: white;
+    background:black;
+    text-align: center;
+    box-shadow: 0 0 5px black;
+    margin-bottom: 0;
+}
+.comment-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow-y: scroll;
+    max-height: 100vh;
+    padding-top: 100px;
+}
+
+.comment-card{
+    color: white;
+    margin: 5px 10px ;
+}
+.title{
+    background: rgb(230, 72, 58);
+    padding-left: 10px;
+}

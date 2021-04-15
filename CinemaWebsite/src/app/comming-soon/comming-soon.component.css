@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400&display=swap');
+
+*{
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 300;
+    letter-spacing: .8px;
+}
+.comming-soon-container{
+    display: flex;
+}
+.side-comment-container{
+    margin-top: 24px;
+    padding-left: 15px;
+    border-left:1px solid rgb(230, 72, 58) ;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-top: 0;
+    border-bottom: 0;
+    padding: 0;
+}
+.header{
+    color: white;
+    background: black;
+    padding: 10px 10px 5px  20px;
+    font-size: 15px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+.card{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    width: 80%;
+    background: transparent;
+    border: none;
+    color:  white;
+}
+
+h3{
+    margin-bottom: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+small{
+    color:  white!important;
+}
+hr{
+    background:  rgb(255, 255, 255);
+    margin: 5px 0;
+}
+img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+}
+.spinner-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+.spinner-container ::ng-deep .mat-progress-spinner circle, .mat-spinner circle{
+    stroke: #E6483A;
+}
+
+
+@media screen and (max-width: 768px) {
+    .side-comment-container{
+        display: none;
+    }
+    .card{
+        border-bottom: 1px solid #E6483A;
+    }
+    .container{
+        border: 1px solid #E6483A;
+        border-top: 0;
+        border-bottom: 0;
+    }
+  }

@@ -1,0 +1,15 @@
+<h2 class="p-2">Film Ratings:</h2>
+<div class="comment-container">
+    <div class="comment-card mb-3 " *ngFor="let comment of commentsArr">
+        <h3 class="mb-1">{{comment.name}}</h3>
+        <p class="title mb-1">{{comment.movieTitle}}</p>
+        <div class="rating mb-2">
+            <ngb-rating [(rate)]="comment.rating">
+                <ng-template let-fill="fill" let-index="index">
+                    <span class="star filled" [class.filled]="fill === 100">&#9733;</span>
+                </ng-template>
+            </ngb-rating>
+        </div>
+        <p>{{comment.text}}</p>
+    </div>
+</div>

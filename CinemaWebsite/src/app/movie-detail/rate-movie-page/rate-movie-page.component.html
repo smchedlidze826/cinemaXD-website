@@ -1,0 +1,24 @@
+<h4 class="success-msg" [ngClass]="{show:commentWasAdded}">Your Cooment has been added</h4>
+<h3>Rate {{selectedMovie.title}}</h3>
+<hr class="bg-light">
+
+<ngb-rating [(rate)]="currentRate">
+    <ng-template let-fill="fill" let-index="index">
+        <span class="star" [class.filled]="fill === 100">&#9733;</span>
+    </ng-template>
+</ngb-rating>
+
+<div class="form-container ">
+    <form class="container col-10 m-5" (ngSubmit)="onSubmit(f.value)" #f=ngForm>
+        <div class="form-group">
+            <label for="">Name</label>
+            <input ngModel class="form-control" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="">Review</label>
+            <textarea rows="4" class="form-control" name="text" ngModel required> </textarea>
+        </div>
+        <button type="submit" mat-raised-button color="warn">Submit</button>
+    </form>
+</div>
+<hr class="bg-light">
