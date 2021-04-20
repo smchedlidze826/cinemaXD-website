@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MovieData } from '../movie-data.model';
-import { GetMovieDataService } from '../getMovieData.service';
+import { MovieData } from '../shared-models/movie-data.model';
+import { GetMovieDataService } from '../shared-services/getMovieData.service';
 import { Router } from '@angular/router';
 
 
@@ -33,7 +33,7 @@ export class CommingSoonComponent implements OnInit {
     }
   }
   onClick(id: number, state: number) {
-    this.router.navigate(['movie-detail', { id: id, id2: state }])
+    this.router.navigate(['/movie-detail', { id: id, id2: state }])
   }
 
 }

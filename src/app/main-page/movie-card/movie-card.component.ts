@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { GetMovieDataService } from 'src/app/getMovieData.service';
-import { MovieData } from 'src/app/movie-data.model';
+import { GetMovieDataService } from 'src/app/shared-services/getMovieData.service';
+import { MovieData } from 'src/app/shared-models/movie-data.model';
+import { state } from '@angular/animations';
 
 @Component({
   selector: 'app-movie-card',
@@ -17,11 +18,20 @@ export class MovieCardComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
+
     let api = 'https://cinema-c1a26-default-rtdb.firebaseio.com/movies.json'
     this.getMovieData.getMovieData(api)
       .subscribe((response: MovieData[]) => {
         this.dataArr = response;
+        console.log(response)
       })
+
+    this.getMovieData.selectedDateWasChanged
+      .subscribe(
+        (resp: any) => {
+          console.log(resp)
+        }
+      )
   }
 
 
@@ -31,6 +41,16 @@ export class MovieCardComponent implements OnInit {
     }
   }
   openMovieInfo(id: number, state: number) {
-    this.router.navigate(['movie-detail', { id: id, id2: state }])
+    this.router.navigate(['/movie-detail', { id: id, id2: state }])
   }
+
+  onClickNavigate(index: number, state: number, session: number) {
+    this.router.navigate(['/movie-detail', {
+      id: index,
+      id2: state,
+      date: this.getMovieData.selectedDate,
+      session: session
+    }])
+  }
+
 }

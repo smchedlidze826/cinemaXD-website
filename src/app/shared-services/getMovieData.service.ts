@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core'
 import { map } from 'rxjs/operators'
 import { HttpClient } from '@angular/common/http';
-import { MovieData } from './movie-data.model';
+import { MovieData } from '../shared-models/movie-data.model';
+import { Subject } from 'rxjs';
 
 
 @Injectable()
 
 export class GetMovieDataService {
+    arr: MovieData[] = [];
+    selectedDate: number;
+    selectedDateWasChanged = new Subject<number>();
 
     constructor(private httpReq: HttpClient) { }
-    // arr: MovieData[] = []
 
     getMovieData(api: string) {
         return this.httpReq.get(api)
@@ -21,7 +24,7 @@ export class GetMovieDataService {
                             movieDataArr.push({ ...responseData[key], id: key })
                         }
                     }
-                    // this.arr = movieDataArr
+                    this.arr = movieDataArr
                     return movieDataArr
                 }
             ))

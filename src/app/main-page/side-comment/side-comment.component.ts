@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CommentsService } from 'src/app/comments.service';
-import { MovieRating } from 'src/app/rate-movie.model';
+import { CommentsService } from 'src/app/shared-services/comments.service';
+import { MovieRating } from 'src/app/shared-models/rate-movie.model';
 
 @Component({
   selector: 'app-side-comment',

@@ -1,0 +1,15 @@
+<div class="container m-auto">
+    <p>Selected Date: {{week[selectedDate] | date:'EEEE, MMMM d, y'}}</p>
+    <div class="session-container">
+        <div class="session" (click)="onClick(i)" *ngFor="let session of sessionsArr; let i = index"
+            [ngClass]="selectedSession == i ? 'selected-session': 'none'">
+            <p class="time"> {{session}}</p>
+            <p class="price">8.99 $</p>
+        </div>
+    </div>
+    <button (click)="openSeats = !openSeats">Choose Seats</button>
+    <div class="seat-container" *ngIf="openSeats">
+        <app-seats></app-seats>
+    </div>
+
+</div>

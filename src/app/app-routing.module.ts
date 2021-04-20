@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
+import { BuyTicketComponent } from './buy-ticket/buy-ticket.component';
 import { CommingSoonComponent } from './comming-soon/comming-soon.component';
 import { ContactComponent } from './contact/contact.component';
 import { GiftCardsComponent } from './gift-cards/gift-cards.component';
@@ -13,14 +14,15 @@ const routes: Routes = [
   {
     path: 'movie-detail', component: MovieDetailComponent,
     children: [
-      { path: ':id', component: MovieDetailComponent },
       { path: ':id:id2', component: MovieDetailComponent },
+      { path: ':id:id2:date:session', component: MovieDetailComponent },
     ]
   },
   { path: 'comming-soon', component: CommingSoonComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'gift-cards', component: GiftCardsComponent },
+
 ];
 
 @NgModule({

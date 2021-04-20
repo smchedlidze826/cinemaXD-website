@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, OnChanges, ViewChild, ElementRef } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
-import { GetMovieDataService } from 'src/app/getMovieData.service';
-import { MovieData } from 'src/app/movie-data.model';
+import { GetMovieDataService } from 'src/app/shared-services/getMovieData.service';
+import { MovieData } from 'src/app/shared-models/movie-data.model';
 
 @Component({
   selector: 'app-carousel',
@@ -9,7 +9,7 @@ import { MovieData } from 'src/app/movie-data.model';
   styleUrls: ['./carousel.component.css']
 })
 export class CarouselComponent implements OnInit, OnChanges {
-  @ViewChild('p', { static: false }) pauseBtn: ElementRef;
+  @ViewChild('p', { static: false }) video: ElementRef;
   @Input() selectedMovieIndex: number = 0;
   dataArr: MovieData[] = [];
   currentlySelectedMovie: MovieData;
@@ -41,6 +41,6 @@ export class CarouselComponent implements OnInit, OnChanges {
 
   onClickPause() {
     this.playing = !this.playing
-    this.playing ? this.pauseBtn.nativeElement.pause() : this.pauseBtn.nativeElement.play()
+    this.playing ? this.video.nativeElement.pause() : this.video.nativeElement.play()
   }
 }

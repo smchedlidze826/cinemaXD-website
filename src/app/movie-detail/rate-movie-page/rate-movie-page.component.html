@@ -9,7 +9,7 @@
 </ngb-rating>
 
 <div class="form-container ">
-    <form class="container col-10 m-5" (ngSubmit)="onSubmit(f.value)" #f=ngForm>
+    <form class="container col-10 m-5" (ngSubmit)="onSubmit(f)" #f=ngForm>
         <div class="form-group">
             <label for="">Name</label>
             <input ngModel class="form-control" name="name" required>
@@ -21,4 +21,3 @@
         <button type="submit" mat-raised-button color="warn">Submit</button>
     </form>
 </div>
-<hr class="bg-light">

@@ -4,7 +4,7 @@
             <mat-spinner></mat-spinner>
         </div>
         <div class="container" *ngIf='dataLoaded'>
-            <h4 class="header mb-4">COMMING SOON </h4>
+            <h2 class="header mb-4">COMMING SOON </h2>
             <div class="card mb-3 " *ngFor='let item of dataArr; let i = index'>
                 <div class="row g-0">
                     <div class="col-md-4">
@@ -46,6 +46,7 @@
                         </div>
                     </div>
                 </div>
+                <hr class="between-cards">
             </div>
         </div>
     </div>

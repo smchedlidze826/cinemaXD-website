@@ -2,7 +2,7 @@
     <div class="navbar">
         <div class="logo"><a routerLink="/" routerLinkActive="active-link" routerLinkActiveOption='{exact:true}'>CINEMA
                 XD</a></div>
-        <ul class="large-sc-size">
+        <ul class="large-sc-size ">
             <li>
                 <a routerLink="/comming-soon" routerLinkActive="active-link">Comming Soon</a>
             </li>
@@ -10,5 +10,26 @@
             <li><a routerLink="/contact" routerLinkActive="active-link">Contact</a></li>
             <li><a routerLink="/about" routerLinkActive="active-link">About Us</a></li>
         </ul>
+        <div class="dropdown-container">
+            <button class="menu-btn" (click)="dropDown = !dropDown">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                    <path d="M0 0h24v24H0V0z" fill="none" />
+                    <path fill="#fff" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+                </svg>
+            </button>
+
+            <ul class="dropdown-content" [ngStyle]="{'display': dropDown ? 'block':'none'}">
+                <li class="link">
+                    <a routerLink="/comming-soon" (click)="dropDown = false" routerLinkActive="active-link">Comming
+                        Soon</a>
+                </li>
+                <li class="link"><a routerLink="/gift-cards" (click)="dropDown = false"
+                        routerLinkActive="active-link">Gift Cards</a></li>
+                <li class="link"><a routerLink="/contact" (click)="dropDown = false"
+                        routerLinkActive="active-link">Contact</a></li>
+                <li class="link"><a routerLink="/about" (click)="dropDown = false" routerLinkActive="active-link">About
+                        Us</a></li>
+            </ul>
+        </div>
     </div>
 </nav>

@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { GetMovieDataService } from 'src/app/getMovieData.service';
-import { MovieData } from 'src/app/movie-data.model';
+import { GetMovieDataService } from 'src/app/shared-services/getMovieData.service';
+import { MovieData } from 'src/app/shared-models/movie-data.model';
 
 @Component({
   selector: 'app-side-navbar',

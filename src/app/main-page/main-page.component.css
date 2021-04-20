@@ -29,13 +29,18 @@
     background: rgb(49, 49, 49);
     padding-bottom: 15px;
 }
-.add{
-    overflow-y: scroll;
-}
+
 
 @media screen and (max-width: 992px) {
+    .main-container{
+        padding: 0 0px;
+    }
     .add{
         display: none;
         border: 10px solid green;
     }
+  }
+
+  @media screen and (max-width: 768px) {
+   
   }

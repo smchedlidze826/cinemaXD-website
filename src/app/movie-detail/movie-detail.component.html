@@ -9,9 +9,13 @@
             <h2>{{selectedMovie.title}}</h2>
             <p>{{selectedMovie.director}} | {{selectedMovie.duration}}</p>
             <p>{{selectedMovie.description}}</p>
+
             <hr class="bg-light">
+
             <div class="imdb">
                 <a href="{{selectedMovie.imdbUrl}}">
+
+                    <!-- imdb LOGO -->
                     <svg id="home_img" class="ipc-logo" xmlns="http://www.w3.org/2000/svg" width="60" height="30"
                         viewBox="0 0 64 32" version="1.1">
                         <g fill="#F5C518">
@@ -30,19 +34,60 @@
                             </path>
                         </g>
                     </svg>
+
                 </a>
+
                 <span class="ml-2">{{selectedMovie.imdbRating}}</span>
             </div>
 
-            <video *ngIf="selectedMovie.trailerUrl !='0'" controls>
-                <source [src]="selectedMovie.trailerUrl" type="video/mp4">
-                <source [src]="selectedMovie.trailerUrl" type="video/ogg">
-            </video>
+            <div class="video-container" *ngIf="selectedMovie.trailerUrl !='0'">
+                <video #video autoplay>
+                    <source [src]="selectedMovie.trailerUrl" type="video/mp4">
+                    <source [src]="selectedMovie.trailerUrl" type="video/ogg">
+                </video>
+
+                <button type="button" class="play-pause" (click)='playPause()'>
+
+                    <!-- play btn -->
+                    <svg *ngIf="!isPlaying" xmlns="http://www.w3.org/2000/svg" class="play" height="24px"
+                        viewBox="0 0 24 24" width="24px" fill="#000000">
+                        <path d="M0 0h24v24H0V0z" fill="none" />
+                        <path d="M10 8.64L15.27 12 10 15.36V8.64M8 5v14l11-7L8 5z" />
+                    </svg>
+                    <!-- pause btn -->
+                    <svg *ngIf="isPlaying" xmlns="http://www.w3.org/2000/svg" class="pause" height="24px"
+                        viewBox="0 0 24 24" width="24px" fill="#000000">
+                        <path d="M0 0h24v24H0V0z" fill="none" />
+                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                    </svg>
+                </button>
+
+
+            </div>
+
+            <!-- if has no trailer  -->
             <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1225&q=80"
                 alt="selectedMovie.title" *ngIf="selectedMovie.trailerUrl =='0'" class="video-missing-img">
+
         </aside>
     </div>
-    <app-rate-movie-page [selectedMovie]="selectedMovie"></app-rate-movie-page>
+
+    <button class="btn-buy" *ngIf="canBeWatched" (click)="openTicketOptions = !openTicketOptions">
+        Buy Ticket
+        <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="20px" viewBox="0 0 24 24"
+            width="20px" fill="#fff">
+            <rect fill="none" height="20" width="20" />
+            <path
+                d="M17,4H7V3h10V4z M17,21H7v-1h10V21z M17,1H7C5.9,1,5,1.9,5,3v18c0,1.1,0.9,2,2,2h10c1.1,0,2-0.9,2-2V3C19,1.9,18.1,1,17,1 L17,1z M7,6h10v12H7V6z M16,11V9.14C16,8.51,15.55,8,15,8H9C8.45,8,8,8.51,8,9.14l0,1.96c0.55,0,1,0.45,1,1c0,0.55-0.45,1-1,1 l0,1.76C8,15.49,8.45,16,9,16h6c0.55,0,1-0.51,1-1.14V13c-0.55,0-1-0.45-1-1C15,11.45,15.45,11,16,11z M12.5,14.5h-1v-1h1V14.5z M12.5,12.5h-1v-1h1V12.5z M12.5,10.5h-1v-1h1V10.5z" />
+        </svg>
+    </button>
+
+    <div class="ticket-container" *ngIf="openTicketOptions">
+        <app-buy-ticket [selectedMovie]="selectedMovie"></app-buy-ticket>
+    </div>
+
     <app-comments [selectedMovie]="selectedMovie"></app-comments>
+    <app-rate-movie-page [selectedMovie]="selectedMovie"></app-rate-movie-page>
+
 
 </div>

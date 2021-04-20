@@ -1,18 +1,19 @@
 <div class="main-container col-12 col-md-11 m-auto">
     <!-- section 1 -->
-    <div class="container col-12">
-        <div class="side-navbar  col-4 col-lg-3 ">
+    <div class="container col-sm-12">
+        <div class="side-navbar  col-sm-4 col-lg-3 ">
             <app-side-navbar (onClickEmit)="getClickedMovieIndex($event)"></app-side-navbar>
         </div>
-        <div class="carousel  col-8 col-lg-9">
+        <div class="carousel col-sm-8 col-lg-9">
             <app-carousel [selectedMovieIndex]="clickedMovieIndex"></app-carousel>
         </div>
     </div>
     <!-- section 2 -->
     <div class="section-2 col-12">
-        <div class="calendar col-12 col-lg-8">
+        <div class="calendar col-sm-12 col-lg-8">
             <app-calendar></app-calendar>
-            <app-movie-collection></app-movie-collection>
+            <app-movie-card></app-movie-card>
+            <!-- <app-movie-collection></app-movie-collection> -->
         </div>
         <div class="add col-4">
             <app-side-comment></app-side-comment>

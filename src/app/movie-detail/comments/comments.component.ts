@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MovieData } from 'src/app/movie-data.model';
-import { CommentsService } from '../../comments.service';
-import { MovieRating } from '../../rate-movie.model';
+import { MovieData } from 'src/app/shared-models/movie-data.model';
+import { CommentsService } from '../../shared-services/comments.service';
+import { MovieRating } from '../../shared-models/rate-movie.model';
 
 @Component({
   selector: 'app-comments',

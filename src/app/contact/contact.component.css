@@ -29,3 +29,18 @@ a:hover{
 agm-map {
     height: 600px;
 }
+
+
+ @media only screen and (max-width: 1000px) {
+    .contact-container{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .contact-info{
+        margin-bottom: 30px;
+    }
+    .map{
+        width: 100%;
+    }
+  } 

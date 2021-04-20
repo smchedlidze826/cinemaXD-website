@@ -54,6 +54,7 @@
 .movie-data-bg:hover{
     transition:all .5s ease-in;
     background: url(../../../assets/media-icon.svg);
+    background-size: cover;
 }
 
 .content{

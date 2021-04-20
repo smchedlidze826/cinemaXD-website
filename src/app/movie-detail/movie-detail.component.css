@@ -14,8 +14,10 @@
 .spinner-container ::ng-deep .mat-progress-spinner circle, .mat-spinner circle{
     stroke: #E6483A;
 }
+
+
 .container{
-    background: rgb(49, 49, 49);
+    background: black;
     color: white;
     margin: 50px auto 0;
 }
@@ -24,8 +26,8 @@
 }
 
 img{
-    max-width: 500px;
-    max-height: 500px;
+    width: 500px;
+    height: 500px;
     object-fit: cover;
 }
 
@@ -40,16 +42,101 @@ p,hr{
     max-width: 600px;
     margin:20px 0;
 }
-video{
+.video-container{
+    position: relative;
     margin: 20px;
     margin-left: 0;
-    max-width: 600px;
-    max-height: 600px;
+    width: 100%;
+    height: 500px;
 }
+video{
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-pause {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: none;
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 20px;
+}
+video:hover + .play-pause,.play-pause:hover,.play-pause svg:hover{
+    transition:all 1s ease ;
+    display: block;
+}
+
+.play-pause svg{
+    fill: rgb(255, 255, 255);
+}
+
+
+
 .video-missing-img{
     display: block;
-    margin: 0;
+    margin: 0 auto;
     margin-top: 20px;
     width: 100%;
     object-fit: cover;
 }
+.btn-buy{
+    border: 1px solid white;
+    background: none;
+    padding: 9px 18px;
+    color:white;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.ticket-container{
+    animation: openContainer 1s ease;
+    overflow: hidden;
+}
+
+@keyframes openContainer {
+    from {display: none;
+          height: 0;}
+
+    to {display:block;
+        height: 192px;}
+  }
+
+  @media only screen and (max-width: 1300px) {
+    img{
+        width: 350px;
+        height: 350px;
+        object-fit: cover;
+    }
+  }
+  @media only screen and (max-width: 1000px) {
+    .data-container{
+        display: block;
+    }
+    img{
+        display: block;
+        width: 100%;
+        margin:30px auto;
+    }
+    video{
+        height: 350px;
+        object-fit: contain;
+    }
+    aside.right{
+        padding: 0;
+    }
+  }
+  @media only screen and (max-width: 1000px) {
+    .video-container{
+        height: 300px;
+    }
+    video{
+        object-fit: contain;
+        height: 100%;
+    }
+  }

@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent implements OnInit {
-  clickedMovieIndex: number = 0
+  clickedMovieIndex: number = 0;
+  selectedDate: number;
 
   constructor() { }
 
@@ -15,4 +16,5 @@ export class MainPageComponent implements OnInit {
   getClickedMovieIndex(num: any) {
     this.clickedMovieIndex = num
   }
+
 }

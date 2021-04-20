@@ -2,8 +2,9 @@
 
 *{font-family: 'Roboto', sans-serif;}
 
-html, body { height: 100%; background: #313131; }
+html, body { height: 100%;    background: black;}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
 
 /* width */
 ::-webkit-scrollbar {
