@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { MovieData } from '../shared-models/movie-data.model';
 
 @Component({
@@ -15,19 +15,23 @@ export class BuyTicketComponent implements OnInit {
 
   @Input() selectedMovie: MovieData;
   movieDataIsLoaded: boolean;
-  sessionsArr: string[];
-  selectedSession: number = 0;
+  sessionsArr: string[] = [];
+  selectedSession: number;
   selectedDate = this.incr;
   openSeats: boolean = false;
 
   constructor(
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
-    if (this.route.snapshot.params.session != undefined) {
-      this.selectedSession = this.route.snapshot.params.session;
-      this.selectedDate = this.route.snapshot.params.date;
-    }
+    this.route.params
+      .subscribe(
+        (params: Params) => {
+          params.session == undefined ? this.selectedSession = 0 : this.selectedSession = +params.session;
+          this.selectedDate = +params.date;
+        }
+      );
 
     this.sessionsArr = [
       this.selectedMovie.morning,
@@ -36,7 +40,12 @@ export class BuyTicketComponent implements OnInit {
   }
 
   onClick(i: number) {
-    this.selectedSession = i
+    this.router.navigate(['/movie-detail', {
+      id: this.route.snapshot.params.id,
+      id2: this.route.snapshot.params.id2,
+      date: this.route.snapshot.params.date,
+      session: i
+    }])
   }
 
 }

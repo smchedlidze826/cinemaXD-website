@@ -36,6 +36,7 @@ import { GetMovieDataService } from './shared-services/getMovieData.service';
 import { CommentsService } from './shared-services/comments.service';
 import { SeatsComponent } from './buy-ticket/seats/seats.component';
 import { BuyTicketComponent } from './buy-ticket/buy-ticket.component';
+import { SelectDirective } from './buy-ticket/seats/select.directive';
 
 
 
@@ -65,6 +66,7 @@ import { BuyTicketComponent } from './buy-ticket/buy-ticket.component';
     ContactComponent,
     SeatsComponent,
     BuyTicketComponent,
+    SelectDirective,
   ],
   imports: [
     BrowserModule,

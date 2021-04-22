@@ -3,6 +3,7 @@ import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MovieData } from 'src/app/shared-models/movie-data.model';
 import { MovieRating } from 'src/app/shared-models/rate-movie.model';
+import { CommentsService } from 'src/app/shared-services/comments.service';
 
 @Component({
   selector: 'app-rate-movie-page',
@@ -17,12 +18,12 @@ export class RateMoviePageComponent implements OnInit {
   commentArr: MovieRating[] = [];
   commentWasAdded: boolean = false;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private commentsService: CommentsService) { }
 
   ngOnInit(): void {
   }
   onSubmit(form: any) {
-    console.log(form.valid)
     if (form.valid) {
       this.comment = new MovieRating(
         this.selectedMovie.title,
@@ -30,6 +31,7 @@ export class RateMoviePageComponent implements OnInit {
         form.value.name,
         form.value.text
       )
+      this.commentsService.commentsArr.push(this.comment)
       let api = 'https://cinema-c1a26-default-rtdb.firebaseio.com/comments.json'
       this.http.post(
         api, this.comment
@@ -42,5 +44,6 @@ export class RateMoviePageComponent implements OnInit {
       this.commentWasAdded = true
       setTimeout(() => this.commentWasAdded = false, 2000)
     }
+    this.commentsService.commentsArrWasChanged.next(this.commentsService.commentsArr)
   }
 }

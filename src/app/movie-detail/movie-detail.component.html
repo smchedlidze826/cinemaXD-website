@@ -41,7 +41,7 @@
             </div>
 
             <div class="video-container" *ngIf="selectedMovie.trailerUrl !='0'">
-                <video #video autoplay>
+                <video #video>
                     <source [src]="selectedMovie.trailerUrl" type="video/mp4">
                     <source [src]="selectedMovie.trailerUrl" type="video/ogg">
                 </video>

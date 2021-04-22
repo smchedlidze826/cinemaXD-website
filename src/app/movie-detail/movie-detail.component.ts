@@ -16,7 +16,7 @@ export class MovieDetailComponent implements OnInit {
   session: number;
   openTicketOptions: boolean = false;
   canBeWatched: boolean;
-  isPlaying: boolean = true;
+  isPlaying: boolean = false;
 
 
   constructor(

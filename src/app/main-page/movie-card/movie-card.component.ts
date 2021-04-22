@@ -1,17 +1,18 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GetMovieDataService } from 'src/app/shared-services/getMovieData.service';
 import { MovieData } from 'src/app/shared-models/movie-data.model';
-import { state } from '@angular/animations';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-movie-card',
   templateUrl: './movie-card.component.html',
   styleUrls: ['./movie-card.component.css']
 })
-export class MovieCardComponent implements OnInit {
+export class MovieCardComponent implements OnInit, OnDestroy {
   dataArr: MovieData[];
   wishListArr: MovieData[] = [];
+  subsc: Subscription;
 
   constructor(
     private getMovieData: GetMovieDataService,
@@ -26,14 +27,16 @@ export class MovieCardComponent implements OnInit {
         console.log(response)
       })
 
-    this.getMovieData.selectedDateWasChanged
+    this.subsc = this.getMovieData.selectedDateWasChanged
       .subscribe(
         (resp: any) => {
           console.log(resp)
         }
       )
   }
-
+  ngOnDestroy() {
+    this.subsc.unsubscribe();
+  }
 
   onClickAddToWishList(num: number) {
     if (this.wishListArr.indexOf(this.dataArr[num]) === -1) {
@@ -41,7 +44,7 @@ export class MovieCardComponent implements OnInit {
     }
   }
   openMovieInfo(id: number, state: number) {
-    this.router.navigate(['/movie-detail', { id: id, id2: state }])
+    this.router.navigate(['/movie-detail', { id: id, id2: state, date: this.getMovieData.selectedDate }])
   }
 
   onClickNavigate(index: number, state: number, session: number) {

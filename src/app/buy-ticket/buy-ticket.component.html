@@ -9,7 +9,7 @@
     </div>
     <button (click)="openSeats = !openSeats">Choose Seats</button>
     <div class="seat-container" *ngIf="openSeats">
-        <app-seats></app-seats>
+        <app-seats [selectedMovie]="selectedMovie" [selectedSession]="selectedSession"></app-seats>
     </div>
 
 </div>
