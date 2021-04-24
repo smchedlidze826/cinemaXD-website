@@ -9,7 +9,7 @@
 }
 
   .container {
-    background: #242333;
+    background: #000000;
     color: white;
     display: flex;
     flex-direction: column;
@@ -107,4 +107,14 @@
   color: white;
   cursor: pointer;
   text-transform: uppercase;
+}
+
+.buy-now:hover{
+  transition: all .3s ease-in-out;
+  border: 1px solid #E6483A;
+  background:#E6483A ;
+}
+.buy-now:hover svg {
+  transition: all .3s ease-in-out;
+  fill: #E6483A;
 }

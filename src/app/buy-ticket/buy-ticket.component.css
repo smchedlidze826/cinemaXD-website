@@ -58,7 +58,11 @@ button{
     padding: 9px 18px;
     text-transform: uppercase;
 }
-
+button:hover{
+    transition: all .5s ease-in;
+    border: 1px solid #E6483A;
+    background: #E6483A;
+}
 .seat-container{
     margin-top: 50px;
     animation: open 1s ease;

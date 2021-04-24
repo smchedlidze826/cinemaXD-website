@@ -93,6 +93,12 @@ video:hover + .play-pause,.play-pause:hover,.play-pause svg:hover{
     margin-bottom: 30px;
     text-transform: uppercase;
 }
+.btn-buy:hover{
+    transition: all .3s ease-in-out;
+    border: 1px solid #E6483A;
+    background: #E6483A;
+}
+
 
 .ticket-container{
     animation: openContainer 1s ease;

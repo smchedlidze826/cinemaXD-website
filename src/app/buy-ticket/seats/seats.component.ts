@@ -74,8 +74,6 @@ export class SeatsComponent implements OnInit {
       } return this.tmpArr;
     } else {
       this.tmpArr.push(seatObj);
-
-      // this.renderer.addClass(this.seat.nativeElement, 'occipied')
       return this.tmpArr;
     }
   }
